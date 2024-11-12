@@ -26,6 +26,34 @@ router.get('/:id', (req, res) => {
     }    
 })
 
+router.post('/', async (req, res) => {
+    try {
+        const body = req.body;
+
+        const newUser = await usersMethods.create(body);
+
+        res.status(201).json(newUser);
+    } catch (error) {
+        res.status(400).send(error.message);
+    }
+})
+
+router.put('/:id', async (req, res) => {
+    try {
+        const userId = req.params.id ? Number(req.params.id) : null;
+
+        if (isNaN(userId)) {
+            throw new Error('User id is not valid')
+        }
+
+        const updatedUser = await usersMethods.update(userId, req.body);
+
+        res.status(200).json(updatedUser);
+    } catch (error) {
+        res.status(400).send(error.message);
+    }
+})
+
 router.delete('/:id', async (req, res) => {
     const userId = req.params.id ? Number(req.params.id) : null;
 

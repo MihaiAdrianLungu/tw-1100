@@ -23,6 +23,7 @@
   "homepage": "https://github.com/MihaiAdrianLungu/tw-1100#readme",
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
     "express": "^4.21.1",
     "morgan": "^1.10.0"
   },
