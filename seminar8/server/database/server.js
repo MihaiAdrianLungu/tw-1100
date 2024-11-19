@@ -6,7 +6,7 @@ const sequelize = new Sequelize({
     logging: false
 })
 
-sequelize.sync()
+sequelize.sync({force: true})
     .then(() => {
         console.log('Models successfully (re)created');
     })

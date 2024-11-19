@@ -9,7 +9,10 @@ const User = sequelize.define('User', {
     },
     username: DataTypes.STRING,
     password: DataTypes.STRING,
-    email: DataTypes.STRING,
+    email: {
+        type: DataTypes.STRING,
+        unique: true,
+    },
     role: {
         type: DataTypes.ENUM,
         values: ['user', 'admin', 'tester'],
