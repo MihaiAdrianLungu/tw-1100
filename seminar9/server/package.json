@@ -1,0 +1,37 @@
+{
+  "name": "seminar6",
+  "version": "1.0.0",
+  "description": "First express project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MihaiAdrianLungu/tw-1100.git"
+  },
+  "keywords": [
+    "express",
+    "javascript"
+  ],
+  "author": "Lungu Mihai Adrian",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MihaiAdrianLungu/tw-1100/issues"
+  },
+  "homepage": "https://github.com/MihaiAdrianLungu/tw-1100#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "jsonwebtoken": "^9.0.2",
+    "morgan": "^1.10.0",
+    "sequelize": "^6.37.5",
+    "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}
