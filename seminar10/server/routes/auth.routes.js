@@ -2,7 +2,6 @@ const express = require('express');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const User = require('../database/models/User');
-const { isValidToken } = require('../utils');
 const router = express.Router();
 
 router.post('/login', async (req, res) => {
@@ -34,24 +33,6 @@ router.post('/login', async (req, res) => {
         console.error(error);
         res.status(400).json({ error: error.message });
     }
-})
-
-router.post('/check', async (req, res) => {
-    const token = req.body.token;
-
-    if(!token) {
-        return res.status(400).json({success: false, message: 'Token not fount', data: {}})
-    }
-
-    const validToken = isValidToken(token);
-
-    if (!validToken) {
-        return res.status(400).json({success: false, message: 'Invalid token', data: {}})
-    }
-
-    res.status(200).json({success: true, message: 'Valid token', data: {
-        token
-    }})
 })
 
 module.exports = router;
